@@ -9,6 +9,7 @@ import { AuthService} from '../../service/auth.service';
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
+  public connexionFailed: boolean;
   constructor(private fb: FormBuilder, private auth: AuthService) { }
 
   ngOnInit() {
@@ -18,9 +19,18 @@ export class LoginComponent implements OnInit {
     });
   }
   login() {
+    this.connexionFailed = false;
     const val = this.loginForm.value;
     if (val.username && val.password) {
-      this.auth.login(val.username, val.password).subscribe();
+      this.auth.login(val.username, val.password)
+          .subscribe(() => {
+            console.log('connected');
+            this.auth.profile().subscribe()
+              },
+              (err) => {
+            console.error;
+            this.connexionFailed = true;
+      });
     }
   }
 }
