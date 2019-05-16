@@ -6,6 +6,7 @@
                 <mat-icon>clear</mat-icon>
             </button>
             <span class="remaining-space"></span>
+
         </mat-toolbar>
         <nav>
             <mat-nav-list>
@@ -22,6 +23,14 @@
             <span><button mat-button (click)="sidenav.toggle()"><mat-icon>view_headline</mat-icon></button><span>JPEG button</span></span>
             <span class="remaining-space"></span>
             <span>JPEG à droite</span>
+            <button mat-button [matMenuTriggerFor]="menu">
+                <mat-icon class="material-icons-outlined">account_box</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="/login" routerLinkActive="active">
+                    <span>Se Connecter</span>
+                </button>
+            </mat-menu>
         </mat-toolbar>
         <div class="container-fluid" style="background: slategray;">
             <router-outlet></router-outlet>

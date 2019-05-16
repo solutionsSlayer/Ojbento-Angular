@@ -1,0 +1,19 @@
+<div class="container">
+  <div fxLayout="row" fxLayoutAlign="center center" style="height: calc(100vh - 64px);">
+    <mat-card class="col-4">
+      <mat-card-title class="text-center"> JPconnexion </mat-card-title>
+      <mat-card-content>
+        <form class="form-content" [formGroup]="loginForm">
+          <mat-form-field>
+            <input matInput placeholder="Votre JPEG" formControlName="username" autocomplete="off" required/>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="JPassword" formControlName="password" autocomplete="off" required/>
+          </mat-form-field>
+          <button class="mt-3" mat-flat-button color="warn"
+          (click)="login()">JPEG</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
