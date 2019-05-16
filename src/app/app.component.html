@@ -7,6 +7,14 @@
             </button>
             <span class="remaining-space"></span>
         </mat-toolbar>
+        <nav>
+            <mat-nav-list>
+                <a routerLink="/product" routerLinkActive="active" mat-list-item (click)="sidenav.close()"><mat-icon> sentiment_satisfied_alt </mat-icon> Les produits du JPEG</a>
+                <a routerLink="/menu" routerLinkActive="active" mat-list-item (click)="sidenav.close()"><mat-icon>print</mat-icon> Les menus du JPEG</a>
+                <a routerLink="/pop" routerLinkActive="active" mat-list-item (click)="sidenav.close()"><mat-icon>pregnant_woman</mat-icon> Les pops du JPEG</a>
+
+            </mat-nav-list>
+        </nav>
     </mat-sidenav>
 
     <mat-sidenav-content>
@@ -15,8 +23,10 @@
             <span class="remaining-space"></span>
             <span>JPEG à droite</span>
         </mat-toolbar>
-        <div class="container-fluid" style="background: olive; witdh: 100vw; height: 50px"></div>
+        <div class="container-fluid" style="background: slategray;">
+            <router-outlet></router-outlet>
 
+        </div>
 
 
     </mat-sidenav-content>
