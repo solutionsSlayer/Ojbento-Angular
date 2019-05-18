@@ -1,6 +1,9 @@
 <div class="container">
   <div fxLayout="row" fxLayoutAlign="center center" style="height: calc(100vh - 64px);">
     <mat-card class="col-4">
+      <ngb-alert type="secondary" *ngIf="connexionFailed" (close)="connexionFailed= false">
+        Le JPEG que vous avez rempli est pas au norme !
+      </ngb-alert>
       <mat-card-title class="text-center"> JPconnexion </mat-card-title>
       <mat-card-content>
         <form class="form-content" [formGroup]="loginForm">

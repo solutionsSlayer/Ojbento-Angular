@@ -9,6 +9,7 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatIconModule, MatToolbarModule, MatSidenavModule, MatCheckboxModule,
   MatButtonModule, MatGridListModule, MatListModule, MatMenuModule,
   MatCardModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProductComponent } from './page/product/product.component';
 import { MenuComponent } from './page/menu/menu.component';
@@ -53,7 +54,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     MatListModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    NgbModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
