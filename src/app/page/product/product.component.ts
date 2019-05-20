@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Type } from '../../class/type';
+import {HttpClient} from '@angular/common/http';
+import {Globals} from '../../globals';
+import {TypeService} from '../../service/type.service';
 
 @Component({
   selector: 'app-product',
@@ -7,9 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private type: TypeService) {
 
+  }
   ngOnInit() {
+
   }
 
 }

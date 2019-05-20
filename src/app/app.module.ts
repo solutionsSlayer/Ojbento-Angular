@@ -18,11 +18,12 @@ import { LoginComponent } from './page/login/login.component';
 import { JwtInterceptor} from './class/jwtinterceptor';
 import { ErrorInterceptor } from './class/errorinterceptor';
 import { IsSignedInGuard} from './guard/is-signed-in.guard';
+import { TypeComponent } from './page/type/type.component';
 
 const appRoutes: Routes = [
   { path: 'product', component: ProductComponent, canActivate: [IsSignedInGuard], data : { title: 'Produits JPEG'} },
   { path: 'menu', component: MenuComponent, canActivate: [IsSignedInGuard], data : { title: 'Menu JPEG'} },
-  { path: 'pop', component: PopComponent, canActivate: [IsSignedInGuard], data : { title: 'Pop JPEG'} },
+  { path: 'type', component: TypeComponent, canActivate: [IsSignedInGuard], data : { title: 'Type'} },
   { path: 'login', component: LoginComponent, data : { title: 'loginPEG'} },
   { path: '', redirectTo: '/product', canActivate: [IsSignedInGuard], pathMatch: 'full' },
   { path: '**', component: AppComponent}
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     ProductComponent,
     MenuComponent,
     PopComponent,
-    LoginComponent
+    LoginComponent,
+    TypeComponent
   ],
   imports: [
     HttpClientModule,
