@@ -31,7 +31,7 @@
 
     <mat-sidenav-content>
         <mat-toolbar color="warn">
-            <span><button mat-button (click)="sidenav.toggle()"><mat-icon>view_headline</mat-icon></button><span>JPEG button</span></span>
+            <span><button mat-button (click)="sidenav.toggle()"><mat-icon>view_headline</mat-icon></button><span>JPEG button {{titleService.currentTitle}}</span></span>
             <span class="remaining-space"></span>
             <span *ngIf="!isConnected()">
             <span>JPEG à droite</span>
