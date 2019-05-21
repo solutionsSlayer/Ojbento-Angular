@@ -17,12 +17,15 @@ import { LoginComponent } from './page/login/login.component';
 import { JwtInterceptor} from './class/jwtinterceptor';
 import { ErrorInterceptor } from './class/errorinterceptor';
 import { IsSignedInGuard} from './guard/is-signed-in.guard';
-import { TypeComponent } from './page/type/type.component';
+import { TypeAddComponent } from './page/type/type-add/type-add.component';
+import { TypeEditComponent } from './page/type/type-edit/type-edit.component';
 
 const appRoutes: Routes = [
   { path: 'product', component: ProductComponent, canActivate: [IsSignedInGuard], data : { title: 'Produits JPEG'} },
   { path: 'menu', component: MenuComponent, canActivate: [IsSignedInGuard], data : { title: 'Menu JPEG'} },
-  { path: 'type', component: TypeComponent, canActivate: [IsSignedInGuard], data : { title: 'Type'} },
+  { path: 'type', component: TypeEditComponent, canActivate: [IsSignedInGuard], data : { title: 'Type'} },
+  { path: 'type/add', component: TypeAddComponent, canActivate: [IsSignedInGuard], data : { title: 'Add Type'} },
+  { path: 'type/edit/:id', component: TypeEditComponent, canActivate: [IsSignedInGuard], data : { title: 'Edit Type'} },
   { path: 'login', component: LoginComponent, data : { title: 'loginPEG'} },
   { path: '', redirectTo: '/product', canActivate: [IsSignedInGuard], pathMatch: 'full' },
   { path: '**', component: AppComponent}
@@ -35,7 +38,9 @@ const appRoutes: Routes = [
     ProductComponent,
     MenuComponent,
     LoginComponent,
-    TypeComponent
+    TypeEditComponent,
+    TypeAddComponent,
+    TypeEditComponent
   ],
   imports: [
     HttpClientModule,
