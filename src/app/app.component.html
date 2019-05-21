@@ -16,7 +16,7 @@
                 <a routerLink="/menu" routerLinkActive="active" mat-list-item (click)="sidenav.close()">
                     <mat-icon class="mr-3">view_list</mat-icon>
                     Menu</a>
-                <a routerLink="/pop" routerLinkActive="active" mat-list-item (click)="sidenav.close()">
+                <a routerLink="/type" routerLinkActive="active" mat-list-item (click)="sidenav.close()">
                     <mat-icon class="mr-3">assessment</mat-icon>
                     Type</a>
                 <span *ngIf="isConnected()">
@@ -40,7 +40,7 @@
             </button>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item routerLink="/login" routerLinkActive="active">
-                    <span>JPEG caché</span>
+                    <span>Déconnexion</span>
                 </button>
             </mat-menu>
             </span>

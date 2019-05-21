@@ -42,10 +42,7 @@ export class TypeEditComponent implements OnInit {
         this.typeService.editType(this.type.id, val.name)
             .subscribe((type: Type) => {
                 this.createForm(type);
+                this.router.navigate(['/type']);
             });
-        this.goBack();
-    }
-    goBack(): void {
-        this.router.navigate(['/type']);
     }
 }
