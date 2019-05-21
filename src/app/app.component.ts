@@ -10,7 +10,7 @@ import { User } from './class/user';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'Jean-Philippe Fernandez';
+  title = 'Restaurant';
   opened: boolean;
   user: User|null;
   constructor(private titleService: TitleService, private auth: AuthService) {}

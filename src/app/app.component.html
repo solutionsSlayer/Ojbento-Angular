@@ -1,7 +1,7 @@
 <mat-sidenav-container class="example-container">
     <mat-sidenav #sidenav mode="side" [(opened)]="opened">
         <mat-toolbar color="warn">
-            <span>JPEG menu</span>
+            <span>Menu</span>
             <button mat-button (click)="sidenav.toggle()">
                 <mat-icon>clear</mat-icon>
             </button>
@@ -11,18 +11,18 @@
         <nav>
             <mat-nav-list>
                 <a routerLink="/product" routerLinkActive="active" mat-list-item (click)="sidenav.close()">
-                    <mat-icon> sentiment_satisfied_alt</mat-icon>
-                    Les produits du JPEG</a>
+                    <mat-icon class="mr-3">fastfood</mat-icon>
+                    Produit</a>
                 <a routerLink="/menu" routerLinkActive="active" mat-list-item (click)="sidenav.close()">
-                    <mat-icon>print</mat-icon>
-                    Les menus du JPEG</a>
+                    <mat-icon class="mr-3">view_list</mat-icon>
+                    Menu</a>
                 <a routerLink="/pop" routerLinkActive="active" mat-list-item (click)="sidenav.close()">
-                    <mat-icon>pregnant_woman</mat-icon>
-                    Les pops du JPEG</a>
+                    <mat-icon class="mr-3">assessment</mat-icon>
+                    Type</a>
                 <span *ngIf="isConnected()">
                     <a routerLink="/profile" routerLinkActive="active" mat-list-item (click)="sidenav.close()">
-                    <mat-icon>hdr_on</mat-icon>
-                        Votre JProfile</a>
+                    <mat-icon class="mr-3">account_circle</mat-icon>
+                        Profil</a>
                 </span>
 
             </mat-nav-list>
@@ -31,10 +31,10 @@
 
     <mat-sidenav-content>
         <mat-toolbar color="warn">
-            <span><button mat-button (click)="sidenav.toggle()"><mat-icon>view_headline</mat-icon></button><span>JPEG button {{titleService.currentTitle}}</span></span>
+            <span><button mat-button (click)="sidenav.toggle()"><mat-icon>view_headline</mat-icon></button><span>OJBento - Restaurant</span></span>
             <span class="remaining-space"></span>
             <span *ngIf="!isConnected()">
-            <span>JPEG à droite</span>
+            <span>Connexion</span>
             <button mat-button [matMenuTriggerFor]="menu">
                 <mat-icon class="material-icons-outlined">account_box</mat-icon>
             </button>
@@ -50,7 +50,7 @@
             </button>
             </span>
         </mat-toolbar>
-        <div class="container-fluid" style="background: #67905e;">
+        <div class="container-fluid">
             <router-outlet></router-outlet>
 
         </div>
