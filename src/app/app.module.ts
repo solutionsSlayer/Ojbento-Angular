@@ -13,7 +13,6 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProductComponent } from './page/product/product.component';
 import { MenuComponent } from './page/menu/menu.component';
-import { PopComponent } from './page/pop/pop.component';
 import { LoginComponent } from './page/login/login.component';
 import { JwtInterceptor} from './class/jwtinterceptor';
 import { ErrorInterceptor } from './class/errorinterceptor';
@@ -35,7 +34,6 @@ const appRoutes: Routes = [
     AppComponent,
     ProductComponent,
     MenuComponent,
-    PopComponent,
     LoginComponent,
     TypeComponent
   ],
