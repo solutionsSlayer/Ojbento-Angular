@@ -1,22 +1,40 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Type } from '../../class/type';
-import {TypeService} from '../../service/type.service';
+import { TypeService } from '../../service/type.service';
 
 @Component({
   selector: 'app-type',
   templateUrl: './type.component.html',
   styleUrls: ['./type.component.scss']
 })
-export class TypeComponent implements OnInit {
+export class TailleComponent implements OnInit {
+  error: boolean;
+  type: Type[];
+  loading: boolean;
+  types: any;
 
-  types: Type[];
-  constructor(private typeService: TypeService) {}
+  constructor(private typeService: TypeService, private router: Router) { }
+
   ngOnInit() {
-    this.getTypes();
+    this.getType();
   }
-  getTypes() {
-    this.typeService.getTypes().subscribe(data => {
-      this.types = data;
-    });
+  getAllTailles() {
+    this.typeService.getTypes()
+        .subscribe((data: Type[]) => {
+          this.type = data;
+        });
+  }
+
+  deleteType(id: number) {
+    this.loading = true;
+    this.typeService.deleteType(id)
+        .subscribe(() => {
+          this.getAllTypes();
+        });
+  }
+
+  createType() {
+    this.router.navigate(['type/add']);
   }
 }

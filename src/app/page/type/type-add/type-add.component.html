@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div fxLayout="row" fxLayoutAlign="center center" style="height: calc(100vh - 54px);">
+        <mat-card class="col-12 col-sm-8 col-md-6 col-lg-4 ">
+            <mat-card-title class="text-center"></mat-card-title>
+            <mat-card-content>
+                <form class="form-content" [formGroup]="typeForm">
+                    <mat-form-field>
+                        <input matInput placeholder="Name" formControlName="name" autocomplete="off" required />
+                    </mat-form-field>
+                    <button class="m-3" mat-flat-button (click)="backclicked()" color="accent">Annuler</button>
+                    <button class="m-3" mat-flat-button (click)="createType()" color="accent">Enregistrer</button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
