@@ -12,7 +12,7 @@ import {Globals} from '../../globals';
   templateUrl: './type.component.html',
   styleUrls: ['./type.component.scss']
 })
-export class TypeEditComponent implements OnInit {
+export class TypeComponent implements OnInit {
   uri = Globals.APP_API + 'type/';
   types: Type[];
 
