@@ -8,43 +8,43 @@ import {catchError, tap} from 'rxjs/operators';
 import {Globals} from '../../globals';
 
 @Component({
-  selector: 'app-type',
-  templateUrl: './type.component.html',
-  styleUrls: ['./type.component.scss']
+    selector: 'app-type',
+    templateUrl: './type.component.html',
+    styleUrls: ['./type.component.scss']
 })
 export class TypeComponent implements OnInit {
-  uri = Globals.APP_API + 'type/';
-  types: Type[];
+    uri = Globals.APP_API + 'type/';
+    types: Type[];
 
-  constructor(private typeService: TypeService, private router: Router, private http: HttpClient) {
-  }
+    constructor(private typeService: TypeService, private router: Router, private http: HttpClient) {
+    }
 
-  ngOnInit() {
-    this.getTypes();
-  }
+    ngOnInit() {
+        this.getTypes();
+    }
 
-  private log(log: string) {
-    // tslint:disable-next-line:no-console
-    console.info(log);
-  }
+    private log(log: string) {
+        // tslint:disable-next-line:no-console
+        console.info(log);
+    }
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.log(error);
-      console.log(`${operation} failed: ${error.message}`);
-      return of(result as T);
-    };
-  }
+    private handleError<T>(operation = 'operation', result?: T) {
+        return (error: any): Observable<T> => {
+            console.log(error);
+            console.log(`${operation} failed: ${error.message}`);
+            return of(result as T);
+        };
+    }
 
-  getTypes() {
-    this.typeService.getTypes().subscribe(data => {
-      this.types = data;
-    });
-  }
+    getTypes() {
+        this.typeService.getTypes().subscribe(data => {
+            this.types = data;
+        });
+    }
 
-  delete(type: Type): void {
-    this.typeService.deleteType(type)
-        .subscribe(_ => this.getTypes());
-  }
+    delete(type: Type): void {
+        this.typeService.deleteType(type)
+            .subscribe(_ => this.getTypes());
+    }
 
 }
